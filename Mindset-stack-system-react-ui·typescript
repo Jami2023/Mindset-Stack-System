@@ -1,0 +1,272 @@
+export default function MindsetStackSystemUI() {
+  const stacks = [
+    {
+      id: 1,
+      name: 'Deep Focus',
+      icon: '⚡',
+      status: 'Active',
+      description: 'Execute with clarity and zero distraction.',
+    },
+    {
+      id: 2,
+      name: 'Creative Flow',
+      icon: '✨',
+      status: 'Ready',
+      description: 'Generate ideas with freedom and curiosity.',
+    },
+    {
+      id: 3,
+      name: 'Calm Discipline',
+      icon: '🌊',
+      status: 'Ready',
+      description: 'Stay steady, structured, and intentional.',
+    },
+  ];
+
+  const layers = [
+    {
+      title: 'Identity',
+      content: 'I am someone who executes with focus and follows through.',
+    },
+    {
+      title: 'Beliefs',
+      content: 'Small consistent actions compound. Clarity creates momentum.',
+    },
+    {
+      title: 'Actions',
+      content: 'Start with the hardest task. Work in focused sprints. Review progress nightly.',
+    },
+    {
+      title: 'Environment',
+      content: 'Clean desk, silent phone, blue-light calm workspace, task list visible.',
+    },
+  ];
+
+  const quickActions = [
+    'Create Stack',
+    'Edit Layers',
+    'View Analytics',
+    'Activate Mode',
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50 text-slate-900">
+      <div className="mx-auto max-w-7xl px-6 py-8 lg:px-10">
+        <header className="mb-8 flex flex-col gap-4 rounded-3xl border border-blue-100 bg-white/90 p-6 shadow-sm backdrop-blur md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-sm font-medium text-blue-600">Mindset Stack System</p>
+            <h1 className="mt-1 text-3xl font-bold tracking-tight">Good morning, Jami</h1>
+            <p className="mt-2 text-sm text-slate-500">Design your identity, beliefs, actions, and environment into one usable operating system.</p>
+          </div>
+
+          <div className="rounded-2xl border border-blue-100 bg-blue-50 px-5 py-4 text-right">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500">Current Active Stack</p>
+            <p className="mt-2 text-lg font-semibold text-blue-900">Deep Focus Mode</p>
+            <p className="text-sm text-blue-700">Clarity • Discipline • Execution</p>
+          </div>
+        </header>
+
+        <section className="mb-8 grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+          <div className="overflow-hidden rounded-[28px] bg-gradient-to-r from-blue-700 via-blue-600 to-sky-500 p-8 text-white shadow-lg">
+            <div className="max-w-2xl">
+              <span className="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-blue-100">
+                Active Hero Stack
+              </span>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight">Deep Focus Mode</h2>
+              <p className="mt-3 max-w-xl text-sm leading-6 text-blue-50">
+                Activate your highest-performance state with a distraction-free routine, decisive action cues,
+                and a clear mental identity.
+              </p>
+
+              <div className="mt-6 rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
+                <p className="text-xs uppercase tracking-[0.2em] text-blue-100">Identity Statement</p>
+                <p className="mt-2 text-lg font-medium">“I execute without hesitation and finish what matters first.”</p>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <button className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-blue-700 shadow-sm transition hover:-translate-y-0.5">
+                  Activate Stack
+                </button>
+                <button className="rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/20">
+                  Customize Layers
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-[28px] border border-blue-100 bg-white p-6 shadow-sm">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-semibold">Quick Actions</h3>
+              <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600">Today</span>
+            </div>
+
+            <div className="mt-5 space-y-3">
+              {quickActions.map((action) => (
+                <button
+                  key={action}
+                  className="flex w-full items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-left text-sm font-medium transition hover:border-blue-200 hover:bg-blue-50"
+                >
+                  <span>{action}</span>
+                  <span className="text-blue-500">→</span>
+                </button>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-2xl bg-slate-50 p-4">
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Daily Progress</p>
+              <div className="mt-3 h-3 overflow-hidden rounded-full bg-blue-100">
+                <div className="h-full w-2/3 rounded-full bg-blue-600" />
+              </div>
+              <p className="mt-2 text-sm text-slate-600">67% alignment with today’s active stack</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-8">
+          <div className="mb-4 flex items-center justify-between">
+            <div>
+              <h3 className="text-2xl font-bold tracking-tight">Your Stacks</h3>
+              <p className="text-sm text-slate-500">Switch between tailored mindsets for different states of performance.</p>
+            </div>
+            <button className="rounded-full border border-blue-200 bg-white px-4 py-2 text-sm font-semibold text-blue-700 shadow-sm transition hover:bg-blue-50">
+              + New Stack
+            </button>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {stacks.map((stack) => (
+              <div
+                key={stack.id}
+                className={`rounded-[24px] border p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md ${
+                  stack.status === 'Active'
+                    ? 'border-blue-300 bg-gradient-to-br from-white to-blue-50'
+                    : 'border-slate-200 bg-white'
+                }`}
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-2xl">
+                      {stack.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">{stack.name}</h4>
+                      <p className="text-sm text-slate-500">{stack.description}</p>
+                    </div>
+                  </div>
+                  <span
+                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                      stack.status === 'Active'
+                        ? 'bg-blue-600 text-white'
+                        : 'bg-slate-100 text-slate-600'
+                    }`}
+                  >
+                    {stack.status}
+                  </span>
+                </div>
+
+                <div className="mt-5 flex gap-2">
+                  <button className="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700">
+                    Open
+                  </button>
+                  <button className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700">
+                    Edit
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="rounded-[28px] border border-blue-100 bg-white p-6 shadow-sm">
+            <div className="mb-5 flex items-center justify-between">
+              <div>
+                <h3 className="text-xl font-bold">Stack Layers</h3>
+                <p className="text-sm text-slate-500">The internal architecture of Deep Focus Mode</p>
+              </div>
+              <button className="rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+                Builder
+              </button>
+            </div>
+
+            <div className="space-y-4">
+              {layers.map((layer, index) => (
+                <div key={layer.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-sm font-bold text-white">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">{layer.title}</h4>
+                      <p className="text-sm text-slate-600">{layer.content}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[28px] border border-blue-100 bg-white p-6 shadow-sm">
+            <div className="mb-6 flex items-center justify-between">
+              <div>
+                <h3 className="text-xl font-bold">Stack Builder</h3>
+                <p className="text-sm text-slate-500">Create and refine a mindset system that is actionable.</p>
+              </div>
+              <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600">Step 3 of 5</span>
+            </div>
+
+            <div className="mb-6 h-2 overflow-hidden rounded-full bg-slate-100">
+              <div className="h-full w-3/5 rounded-full bg-blue-600" />
+            </div>
+
+            <div className="grid gap-4">
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-700">Stack Name</label>
+                <input
+                  defaultValue="Deep Focus Mode"
+                  className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
+                />
+              </div>
+
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-700">Identity Statement</label>
+                <textarea
+                  rows={4}
+                  defaultValue="I am someone who executes the highest-priority task with full attention and no hesitation."
+                  className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
+                />
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-slate-700">Primary Trigger</label>
+                  <input
+                    defaultValue="Start of work session"
+                    className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
+                  />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-slate-700">Environment Cue</label>
+                  <input
+                    defaultValue="Desk cleared + phone on silent"
+                    className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <button className="rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
+                Save Stack
+              </button>
+              <button className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700">
+                Preview
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}
+
